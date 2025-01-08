@@ -1,0 +1,175 @@
+body {
+  font-family: cursive;
+  background-color: aliceblue;
+  padding: 30px;
+  color: black;
+  background-image: url("img/fundo.jpg");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto 300px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: rgba(240, 255, 255, 0.7);
+}
+
+h1 {
+  text-align: center;
+  color: #1d4339;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #1d4339;
+}
+
+p {
+  margin: 10px 0;
+}
+
+input {
+  /*para não passar da área do elemento pai*/
+  box-sizing: border-box;
+}
+
+button {
+  background-color: lightskyblue;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-color: cornflowerblue;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: .8;
+  transition: .3s;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.todo-list {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #49b2b5;
+}
+
+.filter,
+.search {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #49b2b5;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.filter-options div {
+  flex: 1 1 0;
+}
+
+.todo {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(72, 79, 78, 0.1);
+  padding: 0px 10px 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.complete {
+  background-color: #5da39d;
+}
+
+.remove {
+  background-color: crimson;
+  border-color: brown;
+}
+
+.todo-form {
+  padding-bottom: 1.5rem;
+}
+
+input,
+select {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.edit-categories {
+  margin-top: 20px;
+  color: #1d4339;
+  border: 1px solid #ccc;
+  padding: 0px 10px 10px 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.edit-categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.edit-categories li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.edit-categories-btn {
+  margin-top: 10px;
+}
+
+.create-btn {
+  margin-top: 10px;
+}
+
+.remove-category-btn {
+  margin-left: 10px;
+  color: white;
+  background-color: crimson;
+  border-color: brown;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.flower {
+  width: 20px;
+  height: 20px;
+  background-image: url('img/Flor.png');
+  /* Caminho da imagem da flor */
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 0.3;
+}
+
+.flower.selected {
+  opacity: 1;
+  /* Flor totalmente visível quando selecionada */
+  transform: scale(1.2);
+}
+
+.flower:hover {
+  transform: scale(1.3);
+}
