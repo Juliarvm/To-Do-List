@@ -22,6 +22,8 @@ function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
   const [sort, setSort] = useState("Asc");
+  const [prioritySort, setPrioritySort] = useState("HighToLow");
+
 
   // Função para adicionar uma nova tarefa
   const addTodo = (text, category, rating) => {
@@ -95,33 +97,49 @@ function App() {
     <div className="app">
       <h1>Lista de tarefas</h1>
       <Search search={search} setSearch={setSearch} />
-      <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
+      <Filter filter={filter} setFilter={setFilter} setSort={setSort}  setPrioritySort={setPrioritySort} />
 
       <div className="todo-list">
-        {todos
-          .filter((todo) =>
-            filter === "All"
-              ? true
-              : filter === "Completed"
-                ? todo.isCompleted
-                : !todo.isCompleted
-          )
-          .filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase()))
-          .sort((a, b) =>
-            sort === "Asc"
-              ? a.text.localeCompare(b.text)
-              : b.text.localeCompare(a.text)
-          )
-          .map((todo) => (
-            <Todo
-              key={todo.id}
-              todo={todo}
-              removeTodo={removeTodo}
-              completeTodo={completeTodo}
-              updateRating={updateRating} // Passando a função de atualização de rating
-            />
-          ))}
-      </div>
+  {todos
+    .filter((todo) =>
+      filter === "All"
+        ? true
+        : filter === "Completed"
+        ? todo.isCompleted
+        : !todo.isCompleted
+    )
+    .filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase()))
+    .sort((a, b) => {
+      // Ordenação alfabética
+      let textComparison = 0;
+      if (sort === "Asc") {
+        textComparison = a.text.localeCompare(b.text);
+      } else if (sort === "Desc") {
+        textComparison = b.text.localeCompare(a.text);
+      }
+
+      // Ordenação por prioridade (rating)
+      let priorityComparison = 0;
+      if (prioritySort === "HighToLow") {
+        priorityComparison = b.rating - a.rating; // Maior prioridade primeiro
+      } else if (prioritySort === "LowToHigh") {
+        priorityComparison = a.rating - b.rating; // Menor prioridade primeiro
+      }
+
+      // Retornar a comparação por prioridade ou, se necessário, a comparação por texto
+      return priorityComparison !== 0 ? priorityComparison : textComparison;
+    })
+    .map((todo) => (
+      <Todo
+        key={todo.id}
+        todo={todo}
+        removeTodo={removeTodo}
+        completeTodo={completeTodo}
+        updateRating={updateRating}
+      />
+    ))}
+</div>
+
       <TodoForm addTodo={addTodo} categories={categories} addCategory={addCategory} removeCategory={removeCategory} />
     </div>
   );
