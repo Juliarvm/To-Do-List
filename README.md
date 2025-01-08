@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# To-Do-List
-=======
+
 # To-Do-List
 
 Este é um projeto de To-Do List feito com React e configurado usando o Vite. Ele permite adicionar, remover, marcar tarefas como concluídas e avaliar tarefas pelo nível de importância. A aplicação também possui funcionalidades de busca, filtros e opções de ordenação para facilitar o gerenciamento das tarefas.
