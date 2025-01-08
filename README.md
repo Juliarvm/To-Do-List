@@ -32,7 +32,3 @@ CSS: Estilização da interface.
 - Uso de localStorage para armazenar as tarefas e categorias no navegador, permitindo persistência de dados mesmo após recarregar a página.
 
 
-
-
-
->>>>>>> master
