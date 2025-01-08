@@ -30,5 +30,3 @@ CSS: Estilização da interface.
 - A estilização foi feita principalmente com CSS, utilizando classes para cada componente.
 - Uso de localStorage para armazenar as tarefas e categorias no navegador, permitindo persistência de dados mesmo após recarregar a página.
 
-
-
