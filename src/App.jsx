@@ -110,25 +110,21 @@ function App() {
     )
     .filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase()))
     .sort((a, b) => {
-      // Ordenação alfabética
-      let textComparison = 0;
-      if (sort === "Asc") {
-        textComparison = a.text.localeCompare(b.text);
-      } else if (sort === "Desc") {
-        textComparison = b.text.localeCompare(a.text);
+      if (sort) {
+        // Ordenação alfabética
+        return sort === "Asc"
+          ? a.text.localeCompare(b.text)
+          : b.text.localeCompare(a.text);
       }
-
-      // Ordenação por prioridade (rating)
-      let priorityComparison = 0;
-      if (prioritySort === "HighToLow") {
-        priorityComparison = b.rating - a.rating; // Maior prioridade primeiro
-      } else if (prioritySort === "LowToHigh") {
-        priorityComparison = a.rating - b.rating; // Menor prioridade primeiro
+      if (prioritySort) {
+        // Ordenação por prioridade
+        return prioritySort === "HighToLow"
+          ? b.rating - a.rating // Maior prioridade primeiro
+          : a.rating - b.rating; // Menor prioridade primeiro
       }
-
-      // Retornar a comparação por prioridade ou, se necessário, a comparação por texto
-      return priorityComparison !== 0 ? priorityComparison : textComparison;
+      return 0; // Caso nenhuma ordenação esteja ativa
     })
+    
     .map((todo) => (
       <Todo
         key={todo.id}
