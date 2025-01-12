@@ -3,9 +3,9 @@
 Este é um projeto de To-Do List feito com React e configurado usando o Vite. Ele permite adicionar, remover, marcar tarefas como concluídas e avaliar tarefas pelo nível de importância. A aplicação também possui funcionalidades de busca, filtros e opções de ordenação para facilitar o gerenciamento das tarefas.
 
 ## Tecnologias Utilizadas
-React.js: Biblioteca para construir a interface de usuário interativa.
-Vite: Ferramenta de construção rápida e configuração para projetos React.
-CSS: Estilização da interface.
+- React.js: Biblioteca para construir a interface de usuário interativa.
+- Vite: Ferramenta de construção rápida e configuração para projetos React.
+- CSS: Estilização da interface.
 
 ## Funcionalidades
 - Adicionar tarefas: Permite criar novas tarefas com a descrição e categoria.
@@ -29,4 +29,3 @@ CSS: Estilização da interface.
 - Uso do Vite para inicializar o projeto devido à sua rapidez e simplicidade de configuração.
 - A estilização foi feita principalmente com CSS, utilizando classes para cada componente.
 - Uso de localStorage para armazenar as tarefas e categorias no navegador, permitindo persistência de dados mesmo após recarregar a página.
-
